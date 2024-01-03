@@ -121,21 +121,15 @@
         <div id="webchat-container"></div>
     </div>
 
- <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
-<script>
-    document.getElementById('openChatButton').addEventListener('click', function() {
-        document.getElementById('webchat-container').style.display = 'block';
+<script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+    <script>
+        document.getElementById('openChatButton').addEventListener('click', function() {
+            document.getElementById('webchat-container').style.display = 'block';
+            const directLine = window.WebChat.createDirectLine({ token: 'H2gACh86ZfQ.HNw6NMxzrCsKKsPoN9KZlWlzGG0jQkxoeBxjl8kcZL4' });
 
-        // Azure Bot Service URL'nizi buraya ekleyin
-        const azureBotServiceUrl = 'https://botwebsite123.azurewebsites.net';
-        const directLine = window.WebChat.createDirectLine({ 
-            token: 'H2gACh86ZfQ.HNw6NMxzrCsKKsPoN9KZlWlzGG0jQkxoeBxjl8kcZL4', 
-            domain: azureBotServiceUrl
+            window.WebChat.renderWebChat({ directLine }, document.getElementById('webchat-container'));
         });
-
-        window.WebChat.renderWebChat({ directLine }, document.getElementById('webchat-container'));
-    });
-</script>
+    </script>
 
     <footer>
         &copy; 2024 3D Ticaret | Tüm Hakları Saklıdır
