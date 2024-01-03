@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Ticaret</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #555;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #chatButtonContainer {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        #openChatButton {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        #webchat-container {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            z-index: 999;
+            width: 300px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>3D Ticaret</h1>
+    </header>
+
+    <nav>
+        <a href="./index.html">Ana Sayfa</a>
+        <a href="./hakkimizda.html">Hakkımızda</a>
+        <a href="./urunler.html">Ürünler</a>
+        <a href="./iletisim.html">İletişim</a>
+    </nav>
+
+    <main>
+        <h2>Şirketimiz Hakkında</h2>
+        <p>3D Ticaret, 3D teknolojilerinde lider bir şirkettir. </p>
+
+        <h2>Misyonumuz</h2>
+        <p>Müşterilerimize yüksek kaliteli 3D ürünleri sunarak, teknolojik gelişmelerde öncü olmak ve müşteri memnuniyetini en üst seviyeye çıkarmak.</p>
+
+        <h2>Vizyonumuz</h2>
+        <p>3D Ticaret, 3D teknolojilerini kullanarak dünya genelinde bir marka haline gelmeyi hedeflemektedir.</p>
+
+        <h2>Ekibimiz</h2>
+        <p>Alanında uzmanlaşmış bir ekip, müşterilerimize en iyi hizmeti sunmak için çalışmaktadır.</p>
+    </main>
+
+    <div id="chatButtonContainer">
+        <button id="openChatButton">Chat</button>
+        <div id="webchat-container"></div>
+    </div>
+
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+    <script>
+        document.getElementById('openChatButton').addEventListener('click', function() {
+            document.getElementById('webchat-container').style.display = 'block';
+            const directLine = window.WebChat.createDirectLine({ token: 'H2gACh86ZfQ.HNw6NMxzrCsKKsPoN9KZlWlzGG0jQkxoeBxjl8kcZL4' });
+
+            window.WebChat.renderWebChat({ directLine }, document.getElementById('webchat-container'));
+        });
+    </script>
+
+    <footer>
+        &copy; 2024 3D Ticaret | Tüm Hakları Saklıdır
+    </footer>
+</body>
+</html>
