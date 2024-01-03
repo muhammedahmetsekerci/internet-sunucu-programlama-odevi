@@ -122,20 +122,20 @@
     </div>
 
  <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
-    <script>
-        document.getElementById('openChatButton').addEventListener('click', function() {
-            document.getElementById('webchat-container').style.display = 'block';
+<script>
+    document.getElementById('openChatButton').addEventListener('click', function() {
+        document.getElementById('webchat-container').style.display = 'block';
 
-            // GitHub Pages linkinizi buraya ekleyin
-            const githubPagesUrl = 'https://muhammedahmetsekerci.github.io/internet-sunucu-programlama-odevi';
-            const directLine = window.WebChat.createDirectLine({ 
-                token: 'H2gACh86ZfQ.HNw6NMxzrCsKKsPoN9KZlWlzGG0jQkxoeBxjl8kcZL4', 
-                domain: githubPagesUrl
-            });
-
-            window.WebChat.renderWebChat({ directLine }, document.getElementById('webchat-container'));
+        // Azure Bot Service URL'nizi buraya ekleyin
+        const azureBotServiceUrl = 'https://botwebsite123.azurewebsites.net';
+        const directLine = window.WebChat.createDirectLine({ 
+            token: 'H2gACh86ZfQ.HNw6NMxzrCsKKsPoN9KZlWlzGG0jQkxoeBxjl8kcZL4', 
+            domain: azureBotServiceUrl
         });
-    </script>
+
+        window.WebChat.renderWebChat({ directLine }, document.getElementById('webchat-container'));
+    });
+</script>
 
     <footer>
         &copy; 2024 3D Ticaret | Tüm Hakları Saklıdır
